@@ -1,5 +1,5 @@
-<div class="animated fadeIn">
-  <table class="table table-bordered table-striped">
+<div class="animated fadeIn" *ngIf="!loading">
+  <table class="table table-bordered table-striped" >
     <thead>
     <tr>
       <th>Breed</th>
@@ -9,12 +9,22 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let friend of friends">
-      <td><span>{{friend.breed}}</span></td>
-      <td><span>{{friend.dateOfBirth}}</span></td>
-      <td><span>{{friend.id}}</span></td>
-      <td><span>{{friend.name}}</span></td>
+    <tr *ngFor="let afriend of friends">
+      <td><span>{{afriend.breed}}</span></td>
+      <td><span>{{afriend.dateOfBirth}}</span></td>
+      <td><span>{{afriend.id}}</span></td>
+      <td><span>{{afriend.name}}</span></td>
     </tr>
     </tbody>
   </table>
+  <div  *ngIf="!singlefriendloading">
+  <table class="table table-bordered table-striped" >
+    <tbody>
+      <tr> <td><span>Id :</span></td> <td><span>{{friend.id}}</span></td> </tr>
+      <tr><td><span>DOB :</span></td> <td><span>{{friend.dateOfBirth}}</span></td> </tr>
+      <tr> <td><span>Name :</span></td> <td><span>{{friend.name}}</span></td> </tr>
+      <tr><td><span>Breed : </span></td> <td><span>{{friend.breed}}</span></td> </tr>
+    </tbody>
+  </table>
+</div>
 </div>
